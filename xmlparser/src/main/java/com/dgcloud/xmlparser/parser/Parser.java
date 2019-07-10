@@ -13,6 +13,12 @@ public class Parser {
     Element root;
     Document document;
 
+    /**
+     * Realiza o setup inicial do arquivo de XML
+     * 
+     * @param path caminho do arquivo XML
+     * @throws DocumentException
+     */
     public void parse(String path) throws DocumentException {
         File inputFile = new File(path);
         SAXReader reader = new SAXReader();
@@ -20,6 +26,14 @@ public class Parser {
         this.root = this.document.getRootElement();
     }
 
+
+    /**
+     * Recupera o valor de um determinado campo em determinado nó(s)
+     * 
+     * @param elementName nome do nó
+     * @param field nome do campo
+     * @return O valor do campo
+     */
     public String getFieldData(String elementName, String field) {
         String valores = "";
         
@@ -40,13 +54,6 @@ public class Parser {
     }
 
 
-    public String getFieldValue(String node, String child) {
-        final String valores = "";
-        List<Node> list = this.document.selectNodes("//" + node + "/" + child);
-        list.stream().forEach((item) -> {
-            valores.concat(item.getName() + " - attr " + item.getText() + " - value " + item.getStringValue() + "\n");
-        });
-        return valores.toString();
-    }
+    
 
 }
