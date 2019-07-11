@@ -1,5 +1,6 @@
 package com.dgcloud.xmlparser;
 
+import com.dgcloud.xmlparser.model.ArqCart;
 import com.dgcloud.xmlparser.parser.Parser;
 
 /**
@@ -12,8 +13,10 @@ public class App
     {
         try {
             Parser p = new Parser();
-            p.parse("F:\\Projetos_FREELANCER\\xml_parser\\113571_20190617_Protocolo_Abertura_signed.xml");            
-            System.out.println(p.getFieldData("Description","label"));
+            p.parse("D:\\Projeto_FREEELANCER\\xmlParser\\113571_20190617_Protocolo_Abertura_signed.xml");            
+            //System.out.println(p.getFieldData("NamedIndividual","nome"));
+            ArqCart ar = p.getArqCart();
+            System.out.println("Criador Serventia " + ar.getCriadorServentia());
         }catch (Exception e) {
             System.err.println("Erro " + e.getMessage());
         }
