@@ -17,11 +17,14 @@ public class ArqCart {
     private String dataEliminado;
     private String indentificadorProtocolo;
     private String identificadorMatricula;
-    private String versao;
     private String indentificadorDocProducao;
-    private String tipoDeRecurso;
+    private String preposto;
     private String criadorPreposto;
     private String criadorInteressado;
+    private String classe;
+    private String numeroDocumento;
+    private String titulo;
+    private String procedencia;
 
     public String getCriadorServentia() {
         return criadorServentia;
@@ -111,14 +114,6 @@ public class ArqCart {
         this.identificadorMatricula = identificadorMatricula;
     }
 
-    public String getVersao() {
-        return versao;
-    }
-
-    public void setVersao(String versao) {
-        this.versao = versao;
-    }
-
     public String getIndentificadorDocProducao() {
         return indentificadorDocProducao;
     }
@@ -127,12 +122,12 @@ public class ArqCart {
         this.indentificadorDocProducao = indentificadorDocProducao;
     }
 
-    public String getTipoDeRecurso() {
-        return tipoDeRecurso;
+    public String getPreposto() {
+        return preposto;
     }
 
-    public void setTipoDeRecurso(String tipoDeRecurso) {
-        this.tipoDeRecurso = tipoDeRecurso;
+    public void setPreposto(String preposto) {
+        this.preposto = preposto;
     }
 
     public String getCriadorPreposto() {
@@ -159,5 +154,35 @@ public class ArqCart {
         this.tipoDeMeio = tipoDeMeio;
     }
 
+    public String getClasse() {
+		return classe;
+	}
+    
+    public void setClasse(String classe) {
+		this.classe = classe;
+	}
+    
+    public String getNumeroDocumento() {
+		return numeroDocumento;
+	}
+
+    public void setNumeroDocumento(String numeroDocumento) {
+		this.numeroDocumento = numeroDocumento;
+	}
+    
+    public String getTitulo() {
+		return titulo;
+	}
+    
+    public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
         
+    public String getProcedencia() {
+		return procedencia;
+	}
+
+    public void setProcedencia(String procedencia) {
+		this.procedencia = procedencia;
+	}
 }

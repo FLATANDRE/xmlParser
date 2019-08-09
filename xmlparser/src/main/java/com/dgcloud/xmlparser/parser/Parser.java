@@ -2,12 +2,13 @@ package com.dgcloud.xmlparser.parser;
 
 import java.io.File;
 import java.util.Iterator;
-import java.util.List;
+
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
 
 import com.dgcloud.xmlparser.model.ArqCart;
-
-import org.dom4j.*;
-import org.dom4j.io.*;
 
 public class Parser {
 
@@ -102,14 +103,27 @@ public class Parser {
                 if (child.getQualifiedName().equals("documento-eletronico:prazo-guarda")) {
                     arqCart.setPrazoDeGuarda(child.getText());
                 }
-
+                
+                if (child.getQualifiedName().equals("documento-eletronico:classe")) {
+                    arqCart.setClasse(child.getText());
+                }
+                
+                if (child.getQualifiedName().equals("documento-eletronico:numero-documento")) {
+                    arqCart.setNumeroDocumento(child.getText());
+                }
+                
+                if (child.getQualifiedName().equals("documento-eletronico:procedencia")) {
+                    arqCart.setProcedencia(child.getText());
+                }
+                
+                if (child.getQualifiedName().equals("documento-eletronico:titulo")) {
+                    String tituloText = child.getText();
+                	arqCart.setTitulo(tituloText);
+                }
             }
         }
 
         return arqCart;
     }
-
-
-    
 
 }
