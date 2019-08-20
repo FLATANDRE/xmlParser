@@ -1,3 +1,4 @@
 *.classpath
 /xmlparser/target/
 /.vscode/
+/xmlparser/.settings/
