@@ -116,9 +116,25 @@ public class Parser {
                     arqCart.setProcedencia(child.getText());
                 }
                 
+                if (child.getQualifiedName().equals("documento-eletronico:identificador-protocolo")) {
+                    String text = child.getText();
+                    if (text != null) {
+                    	text = text.replace("-", "_");
+	                    
+                    	arqCart.addIndentificadorProtocolo(text);
+                    }
+                }
+                
+                if (child.getQualifiedName().equals("documento-eletronico:identificador-matricula")) {
+                    arqCart.addIdentificadorMatricula(child.getText());
+                }
+                
                 if (child.getQualifiedName().equals("documento-eletronico:titulo")) {
-                    String tituloText = child.getText();
-                	arqCart.setTitulo(tituloText);
+                    arqCart.setTitulo(child.getText());
+                }
+                
+                if (child.getQualifiedName().equals("documento-eletronico:relacao")) {
+                	arqCart.addRelacao(child.getText());
                 }
             }
         }

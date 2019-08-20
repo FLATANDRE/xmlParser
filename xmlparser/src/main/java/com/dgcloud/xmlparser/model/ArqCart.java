@@ -1,5 +1,8 @@
 package com.dgcloud.xmlparser.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Classe modelo com os dados do documento
  */
@@ -15,8 +18,8 @@ public class ArqCart {
     private String destinacaoPrevista;
     private String prazoDeGuarda;
     private String dataEliminado;
-    private String indentificadorProtocolo;
-    private String identificadorMatricula;
+    private List<String> indentificadorProtocolo;
+    private List<String> identificadorMatricula;
     private String indentificadorDocProducao;
     private String preposto;
     private String criadorPreposto;
@@ -25,6 +28,7 @@ public class ArqCart {
     private String numeroDocumento;
     private String titulo;
     private String procedencia;
+    private List<String> relacao;
 
     public String getCriadorServentia() {
         return criadorServentia;
@@ -98,20 +102,28 @@ public class ArqCart {
         this.dataEliminado = dataEliminado;
     }
 
-    public String getIndentificadorProtocolo() {
+    public List<String> getIndentificadorProtocolo() {
         return indentificadorProtocolo;
     }
 
-    public void setIndentificadorProtocolo(String indentificadorProtocolo) {
-        this.indentificadorProtocolo = indentificadorProtocolo;
+    public void addIndentificadorProtocolo(String indentificadorProtocolo) {
+        if (this.indentificadorProtocolo == null) {
+        	this.indentificadorProtocolo = new ArrayList<String>();
+        }
+        
+        this.indentificadorProtocolo.add(indentificadorProtocolo);
     }
 
-    public String getIdentificadorMatricula() {
+    public List<String> getIdentificadorMatricula() {
         return identificadorMatricula;
     }
 
-    public void setIdentificadorMatricula(String identificadorMatricula) {
-        this.identificadorMatricula = identificadorMatricula;
+    public void addIdentificadorMatricula(String identificadorMatricula) {
+    	if (this.identificadorMatricula == null) {
+    		this.identificadorMatricula = new ArrayList<String>();
+    	}
+    	
+    	this.identificadorMatricula.add(identificadorMatricula);
     }
 
     public String getIndentificadorDocProducao() {
@@ -185,4 +197,16 @@ public class ArqCart {
     public void setProcedencia(String procedencia) {
 		this.procedencia = procedencia;
 	}
+    
+    public List<String> getRelacao() {
+		return relacao;
+	}
+
+    public void addRelacao(String relacao) {
+    	if (this.relacao == null) {
+    		this.relacao = new ArrayList<String>();
+    	}
+    	
+    	this.relacao.add(relacao);
+    }
 }
